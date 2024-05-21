@@ -5,7 +5,7 @@
 
 O Freelando é uma Startup. Nesse momento, ele possui uma tela inicial, de login e de cadastro.
 
-<img src="screencapture.png" alt="Imagem do Freelando" width="50%">
+<img src="screencapture.png" alt="Imagem do Freelando" width="100%">
 
 
 ## 🔨 Funcionalidades do projeto
@@ -18,11 +18,11 @@ O [Figma dessa aplicação você encontra aqui](https://www.figma.com/file/DGIzb
 
 Se liga nessa lista de tudo que usaremos nesse curso:
 
-- `React`
-- `Biblioteca Formik`
-- `Componente Formik, Form, Formik e ErrorMessage`
-- `Hook useFormikContext()`
-- `Expressões regulares (Regex)`
+- React
+- Biblioteca Formik
+- Componente `Formik`, `Form`, e `ErrorMessage`
+- Hook `useFormikContext()`
+- Expressões regulares (`Regex`)
 
 E muito mais!
 
