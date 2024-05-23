@@ -1,11 +1,12 @@
-import { Tipografia } from '../../componentes/Tipografia/Tipografia'
-import { CampoTexto } from '../../componentes/CampoTexto/CampoTexto'
-import { ListaSupensa } from '../../componentes/ListaSuspensa/ListaSuspensa'
 import { Col, Row } from 'react-grid-system'
-import { Botao } from '../../componentes/Botao/Botao'
 import { Link } from 'react-router-dom'
+import { Form, Formik } from 'formik'
+
+import { Botao } from '../../componentes/Botao/Botao'
+import { CampoTexto } from '../../componentes/CampoTexto/CampoTexto'
 import { estadosBrasileiros } from '../../utils/estadosBr'
-import { Formik } from 'formik'
+import { ListaSupensa } from '../../componentes/ListaSuspensa/ListaSuspensa'
+import { Tipografia } from '../../componentes/Tipografia/Tipografia'
 
 const DadosPessoais = () => {
 	return (
@@ -21,7 +22,7 @@ const DadosPessoais = () => {
 			}}
 		>
 			{formik => {
-				<form>
+				<Form onSubmit={formik.handleSubmit}>
 					<div style={{ textAlign: 'center' }}>
 						<Tipografia variante='h1' componente='h1'>
 							Crie seu cadastro
@@ -37,11 +38,8 @@ const DadosPessoais = () => {
 						<Col>
 							<CampoTexto
 								titulo='Nome completo'
-								valor={formik.values.nome}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-								tipo='text'
-								required
+								name='nome'
+								type='text'
 							/>
 						</Col>
 					</Row>
@@ -58,11 +56,8 @@ const DadosPessoais = () => {
 						<Col lg={8} md={8} sm={8}>
 							<CampoTexto
 								titulo='Cidade'
-								valor={formik.values.cidade}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-								tipo='text'
-								required
+								type='text'
+								name='cidade'
 							/>
 						</Col>
 					</Row>
@@ -70,21 +65,15 @@ const DadosPessoais = () => {
 						<Col lg={6} md={6} sm={6}>
 							<CampoTexto
 								titulo='E-mail'
-								valor={formik.values.email}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-								tipo='email'
-								required
+								name='email'
+								type='email'
 							/>
 						</Col>
 						<Col lg={6} md={6} sm={6}>
 							<CampoTexto
 								titulo='Telefone'
-								valor={formik.values.telefone}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-								tipo='tel'
-								required
+								name='telefone'
+								type='tel'
 							/>
 						</Col>
 					</Row>
@@ -92,21 +81,15 @@ const DadosPessoais = () => {
 						<Col lg={6} md={6} sm={6}>
 							<CampoTexto
 								titulo='Senha'
-								valor={formik.values.senha}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-								tipo='password'
-								required
+								name='senha'
+								type='password'
 							/>
 						</Col>
 						<Col lg={6} md={6} sm={6}>
 							<CampoTexto
 								titulo='Confirme sua senha'
-								valor={formik.values.confirmarSenha}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-								tipo='password'
-								required
+								name='confirmarSenha'
+								type='password'
 							/>
 						</Col>
 					</Row>
@@ -124,7 +107,7 @@ const DadosPessoais = () => {
 							</div>
 						</Col>
 					</Row>
-				</form>
+				</Form>
 			}}
 		</Formik>
 	)
