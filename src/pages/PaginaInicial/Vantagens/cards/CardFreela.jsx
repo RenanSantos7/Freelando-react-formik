@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import { Col } from "react-grid-system"
-import { Card } from "../../../../componentes/Card/Card"
-import { Tipografia } from "../../../../componentes/Tipografia/Tipografia"
+import { Card } from "../../../../components/Card/Card"
+import { Tipografia } from "../../../../components/Tipografia/Tipografia"
 
 const ConteudoCardEstilizado = styled.div`
     display: flex;

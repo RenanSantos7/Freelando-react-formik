@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-grid-system"
 import { Outlet } from "react-router-dom"
-import { Card } from "../../componentes/Card/Card"
+import { Card } from "../../components/Card/Card"
 const LayoutBaseCadastro = () => {
     return (
         <Container>

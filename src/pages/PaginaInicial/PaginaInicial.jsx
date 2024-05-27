@@ -3,7 +3,7 @@ import Banner from "./Banner/Banner";
 import Bloco from "./Bloco";
 import CardCliente from "./Vantagens/cards/CardCliente";
 import CardFreela from "./Vantagens/cards/CardFreela";
-import Chip from "../../componentes/Chip/Chip";
+import Chip from "../../components/Chip/Chip";
 import { cardsClientes, cardsFreelas, habilidades } from "./dados";
 
 

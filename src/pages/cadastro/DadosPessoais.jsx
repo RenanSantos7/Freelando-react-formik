@@ -2,11 +2,11 @@ import { Col, Row } from 'react-grid-system'
 import { Link } from 'react-router-dom'
 import { Form, Formik } from 'formik'
 
-import { Botao } from '../../componentes/Botao/Botao'
-import { CampoTexto } from '../../componentes/CampoTexto/CampoTexto'
+import { Botao } from '../../components/Botao/Botao'
+import { CampoTexto } from '../../components/CampoTexto/CampoTexto'
 import { estadosBrasileiros } from '../../utils/estadosBr'
-import { ListaSupensa } from '../../componentes/ListaSuspensa/ListaSuspensa'
-import { Tipografia } from '../../componentes/Tipografia/Tipografia'
+import { ListaSupensa } from '../../components/ListaSuspensa/ListaSuspensa'
+import { Tipografia } from '../../components/Tipografia/Tipografia'
 
 const DadosPessoais = () => {
 	return (
