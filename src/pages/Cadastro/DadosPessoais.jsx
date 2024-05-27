@@ -8,7 +8,7 @@ import { estadosBrasileiros } from '../../utils/estadosBr'
 import { ListaSupensa } from '../../components/ListaSuspensa/ListaSuspensa'
 import { Tipografia } from '../../components/Tipografia/Tipografia'
 
-const DadosPessoais = () => {
+export default function DadosPessoais() {
 	return (
 		<Formik
 			initialValues={{
@@ -41,14 +41,14 @@ const DadosPessoais = () => {
 
 				if (!values.email) {
 					errors.email = 'Campo obrigatório'
-				} else if (!/^[a-Z0-9_%-.]+@\w+\.[a-Z.]{2,}$/i.test(values.email)) {
+				} else if (!/^[a-Z0-9._%+-]+@[a-Z0-9.-]+\.[a-Z]{2,}$/i.test(values.email)) {
 					errors.email('Email inválido')
 				}
 
 				return errors
 			}}
 		>
-			{formik => {
+			{formik => (
 				<Form onSubmit={formik.handleSubmit}>
 					<div style={{ textAlign: 'center' }}>
 						<Tipografia variante='h1' componente='h1'>
@@ -135,9 +135,7 @@ const DadosPessoais = () => {
 						</Col>
 					</Row>
 				</Form>
-			}}
+			)}
 		</Formik>
 	)
 }
-
-export default DadosPessoais
