@@ -1,8 +1,8 @@
 import styled from "@emotion/styled"
 import { Col, Row } from "react-grid-system"
 import { Link } from "react-router-dom"
-import { Botao } from "../../componentes/Botao/Botao"
-import { Tipografia } from "../../componentes/Tipografia/Tipografia"
+import { Botao } from "../../components/Botao/Botao"
+import { Tipografia } from "../../components/Tipografia/Tipografia"
 
 import conclusao from './assets/cliente-concluido.png'
 

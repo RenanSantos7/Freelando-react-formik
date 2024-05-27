@@ -1,12 +1,12 @@
 import { Col, Container, Row } from "react-grid-system"
-import { Card } from "../../componentes/Card/Card"
-import { Tipografia } from "../../componentes/Tipografia/Tipografia"
+import { Card } from "../../components/Card/Card"
+import { Tipografia } from "../../components/Tipografia/Tipografia"
 import styled from "@emotion/styled"
 
 import erro404 from './assets/erro-404.png'
 import LayoutBase from "../LayoutBase"
 import { Link } from "react-router-dom"
-import { Botao } from "../../componentes/Botao/Botao"
+import { Botao } from "../../components/Botao/Botao"
 
 const ImagemEstilizada = styled.img`
     max-width: 100%;

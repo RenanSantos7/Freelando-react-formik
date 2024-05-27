@@ -1,6 +1,6 @@
 import { Col, Row } from "react-grid-system"
-import { Tipografia } from "../../componentes/Tipografia/Tipografia"
-import { Link } from "../../componentes/Link/Link"
+import { Tipografia } from "../../components/Tipografia/Tipografia"
+import { Link } from "../../components/Link/Link"
 
 import { Link as RouterLink } from 'react-router-dom'
 

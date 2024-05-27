@@ -1,7 +1,7 @@
-import { Tipografia } from "../../componentes/Tipografia/Tipografia"
-import GrupoRadio from "../../componentes/Radio/GrupoRadio"
+import { Tipografia } from "../../components/Tipografia/Tipografia"
+import GrupoRadio from "../../components/Radio/GrupoRadio"
 import { Col, Row } from "react-grid-system"
-import { Botao } from "../../componentes/Botao/Botao"
+import { Botao } from "../../components/Botao/Botao"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 

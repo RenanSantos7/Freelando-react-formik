@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { Row } from "react-grid-system"
-import { Tipografia } from "../../componentes/Tipografia/Tipografia"
+import { Tipografia } from "../../components/Tipografia/Tipografia"
 
 const ContanierEstilizado = styled.div`
     text-align: center;

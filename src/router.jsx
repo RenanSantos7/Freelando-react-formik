@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom"
-import Concluido from "../paginas/cadastro/Concluido";
-import DadosPessoais from "../paginas/cadastro/DadosPessoais";
-import Interesses from "../paginas/cadastro/Interesses";
-import LayoutBaseCadastro from "../paginas/cadastro/LayoutBaseCadastro";
-import SelecaoCliente from "../paginas/cadastro/SelecaoCliente";
-import LayoutBase from "../paginas/LayoutBase";
-import PaginaInicial from "../paginas/PaginaInicial/PaginaInicial";
-import Pagina404 from "../paginas/erros/Pagina404";
-import Login from "../paginas/Login/Login";
+import Concluido from "./pages/cadastro/Concluido";
+import DadosPessoais from "./pages/cadastro/DadosPessoais";
+import Interesses from "./pages/cadastro/Interesses";
+import LayoutBaseCadastro from "./pages/cadastro/LayoutBaseCadastro";
+import SelecaoCliente from "./pages/cadastro/SelecaoCliente";
+import LayoutBase from "./pages/LayoutBase";
+import PaginaInicial from "./pages/PaginaInicial/PaginaInicial";
+import Pagina404 from "./pages/erros/Pagina404";
+import Login from "./pages/Login/Login";
 
 export const router = createBrowserRouter([
     {
