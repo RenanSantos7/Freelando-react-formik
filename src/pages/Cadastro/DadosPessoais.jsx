@@ -42,7 +42,7 @@ const DadosPessoais = () => {
 				if (!values.email) {
 					errors.email = 'Campo obrigatório'
 				} else if (!/^[a-Z0-9_%-.]+@\w+\.[a-Z.]{2,}$/i.test(values.email)) {
-					errors.email('Número de telefone inválido')
+					errors.email('Email inválido')
 				}
 
 				return errors
