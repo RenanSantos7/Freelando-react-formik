@@ -20,6 +20,18 @@ const DadosPessoais = () => {
 				senha: '',
 				confirmarSenha: '',
 			}}
+			validate={values => {
+				const errors = []
+				if (!values.nome) {
+					errors.nome = 'Campo obrigatório'
+				}
+				if (!values.confirmarSenha) {
+					errors.confirmarSenha = 'Campo obrigatório'
+				} else if (values.senha != confirmarSenha) {
+					errors.confirmarSenha = 'As senhas não conferem'
+				}
+				return errors
+			}}
 		>
 			{formik => {
 				<Form onSubmit={formik.handleSubmit}>
