@@ -21,15 +21,30 @@ const DadosPessoais = () => {
 				confirmarSenha: '',
 			}}
 			validate={values => {
-				const errors = []
+				const errors = {}
+				
 				if (!values.nome) {
 					errors.nome = 'Campo obrigatório'
 				}
+				
 				if (!values.confirmarSenha) {
 					errors.confirmarSenha = 'Campo obrigatório'
 				} else if (values.senha != confirmarSenha) {
 					errors.confirmarSenha = 'As senhas não conferem'
 				}
+
+				if (!values.telefone) {
+					errors.telefone = 'Campo obrigatório'
+				} else if (!/^\d{10,11}$/i.test(values.telefone)) {
+					errors.telefone('Número de telefone inválido')
+				}
+
+				if (!values.email) {
+					errors.email = 'Campo obrigatório'
+				} else if (!/^[a-Z0-9_%-.]+@\w+\.[a-Z.]{2,}$/i.test(values.email)) {
+					errors.email('Número de telefone inválido')
+				}
+
 				return errors
 			}}
 		>
