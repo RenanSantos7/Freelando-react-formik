@@ -1,5 +1,5 @@
 import { Col, Row } from 'react-grid-system'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Form, Formik } from 'formik'
 
 import { Botao } from '../../components/Botao/Botao'
@@ -9,6 +9,8 @@ import { ListaSupensa } from '../../components/ListaSuspensa/ListaSuspensa'
 import { Tipografia } from '../../components/Tipografia/Tipografia'
 
 export default function DadosPessoais() {
+	const navegarPara = useNavigate()
+
 	return (
 		<Formik
 			initialValues={{
@@ -41,11 +43,15 @@ export default function DadosPessoais() {
 
 				if (!values.email) {
 					errors.email = 'Campo obrigatório'
-				} else if (!/^[a-Z0-9._%+-]+@[a-Z0-9.-]+\.[a-Z]{2,}$/i.test(values.email)) {
+				} else if (!/^[A-z0-9._%+-]+@[A-z0-9.-]+\.[A-z]{2,}$/i.test(values.email)) {
 					errors.email('Email inválido')
 				}
 
 				return errors
+			}}
+			onSubmit={values => {
+				console.log(values)
+				navegarPara('/cadastro/concluido')
 			}}
 		>
 			{formik => (
