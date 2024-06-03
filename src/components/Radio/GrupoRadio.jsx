@@ -1,18 +1,27 @@
+import styled from "@emotion/styled";
 import Radio from "./Radio";
+import { useFormikContext } from "formik";
 
-const GrupoRadio = ({ opcoes, valor, onChange }) => {
+const Container = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+`
+
+const GrupoRadio = ({ opcoes }) => {
+  const { values } = useFormikContext()
+
   return (
-    <div>
-      {opcoes.map((option) => (
+    <Container>
+      {opcoes.map(opcao => (
         <Radio
-          key={option.valor}
-          valor={option.valor}
-          label={option.label}
-          checked={option.valor === valor}
-          onClick={() => onChange(option.valor)}
+          key={opcao.id}
+          name='interesse'
+          value={opcao.valor}
+          label={opcao.label}
+          checked={opcao.valor === values.interesse}
         />
       ))}
-    </div>
+    </Container>
   );
 };
 

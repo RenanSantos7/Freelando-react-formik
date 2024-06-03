@@ -7,6 +7,8 @@ import { CampoTexto } from '../../components/CampoTexto/CampoTexto'
 import { estadosBrasileiros } from '../../utils/estadosBr'
 import { ListaSupensa } from '../../components/ListaSuspensa/ListaSuspensa'
 import { Tipografia } from '../../components/Tipografia/Tipografia'
+import { schema } from '../../schemas/DadosPessoas.schema'
+
 
 export default function DadosPessoais() {
 	const navegarPara = useNavigate()
