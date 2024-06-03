@@ -43,7 +43,9 @@ export default function DadosPessoais() {
 
 				if (!values.email) {
 					errors.email = 'Campo obrigatório'
-				} else if (!/^[A-z0-9._%+-]+@[A-z0-9.-]+\.[A-z]{2,}$/i.test(values.email)) {
+				} else if (
+					!/^[A-z0-9._%+-]+@[A-z0-9.-]+\.[A-z]{2,}$/i
+						.test(values.email)) {
 					errors.email('Email inválido')
 				}
 
