@@ -1,14 +1,28 @@
 import { Col, Row } from 'react-grid-system'
 import { Link, useNavigate } from 'react-router-dom'
-import { Form, Formik } from 'formik'
+import { Field, Form, Formik } from 'formik'
+import styled from '@emotion/styled'
 
 import { Botao } from '../../components/Botao/Botao'
 import { CampoTexto } from '../../components/CampoTexto/CampoTexto'
 import { estadosBrasileiros } from '../../utils/estadosBr'
 import { ListaSupensa } from '../../components/ListaSuspensa/ListaSuspensa'
 import { Tipografia } from '../../components/Tipografia/Tipografia'
-import { schema } from '../../schemas/DadosPessoas.schema'
+import { schema } from '../../schemas/DadosPessoas.schema.jsx'
+import AceitarTermos from '../../components/AceitarTermos/AceitarTermos.jsx'
 
+const FlexStack = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+`
+
+const FlexLine = styled.div`
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+	justify-content: space-between;
+`
 
 export default function DadosPessoais() {
 	const navegarPara = useNavigate()
@@ -23,36 +37,9 @@ export default function DadosPessoais() {
 				email: '',
 				senha: '',
 				confirmarSenha: '',
+				termos: false,
 			}}
-			validate={values => {
-				const errors = {}
-				
-				if (!values.nome) {
-					errors.nome = 'Campo obrigatório'
-				}
-				
-				if (!values.confirmarSenha) {
-					errors.confirmarSenha = 'Campo obrigatório'
-				} else if (values.senha != confirmarSenha) {
-					errors.confirmarSenha = 'As senhas não conferem'
-				}
-
-				if (!values.telefone) {
-					errors.telefone = 'Campo obrigatório'
-				} else if (!/^\d{10,11}$/i.test(values.telefone)) {
-					errors.telefone('Número de telefone inválido')
-				}
-
-				if (!values.email) {
-					errors.email = 'Campo obrigatório'
-				} else if (
-					!/^[A-z0-9._%+-]+@[A-z0-9.-]+\.[A-z]{2,}$/i
-						.test(values.email)) {
-					errors.email('Email inválido')
-				}
-
-				return errors
-			}}
+			validationSchema={schema}
 			onSubmit={values => {
 				console.log(values)
 				navegarPara('/cadastro/concluido')
@@ -71,79 +58,76 @@ export default function DadosPessoais() {
 							sobre sua forma de trabalho.
 						</Tipografia>
 					</div>
-					<Row>
-						<Col>
+
+					<FlexStack>
+						<FlexLine>
 							<CampoTexto
 								titulo='Nome completo'
 								name='nome'
 								type='text'
 							/>
-						</Col>
-					</Row>
-					<Row>
-						<Col lg={4} md={4} sm={4}>
+
+							<CampoTexto
+								titulo='Data de nascimento'
+								name='nascimento'
+								type='date'
+							/>
+						</FlexLine>
+	
+						<FlexLine>
 							<ListaSupensa
 								titulo='Estado'
 								opcoes={estadosBrasileiros}
 								valor={formik.values.estado}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 							/>
-						</Col>
-						<Col lg={8} md={8} sm={8}>
-							<CampoTexto
-								titulo='Cidade'
-								type='text'
-								name='cidade'
-							/>
-						</Col>
-					</Row>
-					<Row>
-						<Col lg={6} md={6} sm={6}>
+	
+							<CampoTexto titulo='Cidade' type='text' name='cidade' />
+						</FlexLine>
+	
+						<FlexLine>
 							<CampoTexto
 								titulo='E-mail'
 								name='email'
 								type='email'
+								autoComplete='username'
 							/>
-						</Col>
-						<Col lg={6} md={6} sm={6}>
+	
 							<CampoTexto
 								titulo='Telefone'
 								name='telefone'
 								type='tel'
 							/>
-						</Col>
-					</Row>
-					<Row>
-						<Col lg={6} md={6} sm={6}>
+						</FlexLine>
+	
+						<FlexLine>
 							<CampoTexto
 								titulo='Senha'
 								name='senha'
 								type='password'
+								autoComplete='new-password'
 							/>
-						</Col>
-						<Col lg={6} md={6} sm={6}>
+	
 							<CampoTexto
 								titulo='Confirme sua senha'
 								name='confirmarSenha'
 								type='password'
+								autoComplete='new-password'
 							/>
-						</Col>
-					</Row>
-					<Row>
-						<Col lg={6} md={6} sm={6}>
-							<Link to='/cadastro/interesses'>
-								<Botao variante='secundaria'>Anterior</Botao>
-							</Link>
-						</Col>
-						<Col lg={6} md={6} sm={6}>
-							<div style={{ textAlign: 'right' }}>
-								{/* <Link to='/cadastro/concluido'> */}
-								<Botao>Próxima</Botao>
-								{/* </Link> */}
-							</div>
-						</Col>
-					</Row>
+						</FlexLine>
+	
+						<AceitarTermos name='termos' formik={formik} />
+
+						<FlexLine>
+							<Botao
+								variante='secundaria'
+								onClick={() => navegarPara('/cadastro/interesses')}
+							>Anterior</Botao>
+	
+							<Botao type='submit'>Próxima</Botao>
+						</FlexLine>
+					</FlexStack>
 				</Form>
 			)}
 		</Formik>
