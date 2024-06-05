@@ -1,33 +1,47 @@
+#  Freelando
 
-![Front-end-React_ construíndo formulários com Formik](https://github.com/MonicaHillman/3650-formik/assets/51282495/ea82840e-35c2-46b4-a92f-5e255713099e)
+![](https://github.com/alura-cursos/3650-formik/raw/projeto-base/screencapture.png)
 
-# Freelando
+Este é um projeto em React desenvolvido no curso *React: criando formulários com Formik e yup* da [Alura](https://cursos.alura.com.br/).
 
-O Freelando é uma Startup. Nesse momento, ele possui uma tela inicial, de login e de cadastro.
+> [!TIP]
+> [Repositório do curso](https://github.com/alura-cursos/3650-formik/raw/projeto-base/screencapture.png)
 
-<img src="screencapture.png" alt="Imagem do Freelando" width="100%">
+## Tecnologias utilizadas
+
+- [React](https://react.dev/)
+- [Formik](https://formik.org/)
+- [Expressões regulares (Regex)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions)
 
 
-## 🔨 Funcionalidades do projeto
+## Como acessar online
 
-Nesse primeiro momento, nós temos o fluxo que foi idealizada como a primeiro entrega do time de desenvolvimento. Agora, iremos refatorar os formulários existentes para aplicar a biblioteca Formik.
+O deploy do projeto foi feito pelo [Netilify](https://www.netlify.com/) e está disponível em https://freelando-formik.netlify.app/
 
-O [Figma dessa aplicação você encontra aqui](https://www.figma.com/file/DGIzbfXEi27oiKzI0nGMIV/Freelando-%7C-WebApp-com-React?node-id=244%3A11524&t=J2NfqHrvVIr0jsgs-0).
+## Como rodar localmente
 
-## ✔️ Técnicas e tecnologias utilizadas
+Este projeto foi criado usando [Vite](https://vite.dev), portanto você pode seguir a documentação desse script para fazer deploy do site localmente.
 
-Se liga nessa lista de tudo que usaremos nesse curso:
+No caso, primeiro você precisará baixar o projeto com executando o seguinte comando no terminal:
 
-- React
-- Biblioteca Formik
-- Componente `Formik`, `Form`, e `ErrorMessage`
-- Hook `useFormikContext()`
-- Expressões regulares (`Regex`)
+```
+git clone https://github.com/RenanSantos7/Freelando-react-formik.git
+```
 
-E muito mais!
+Agora, instale as dependências:
 
-## 🛠️ Abrir e rodar o projeto
+```
+npm i
+```
 
-Para abrir e rodar o projeto, execute `npm i` para instalar as dependências e `npm run dev` para inicar o projeto.
+E por fim rode o projeto com:
 
-Depois, acesse <a href="http://localhost:5173/">http://localhost:5173/</a> no seu navegador.
+```
+npm run dev
+```
+
+O terminal mostrará o endereço para acessar o site no qual você pode clicar para abri-lo. Você também pode apertar `o` e depois `Enter` para fazer isso.
+
+## Licensa
+
+O projeto está disponível publicamente com a licença [MIT](./LICENSE)
