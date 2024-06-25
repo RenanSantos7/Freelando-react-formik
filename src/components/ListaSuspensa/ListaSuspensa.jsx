@@ -45,7 +45,7 @@ export const ListaSupensa = ({ titulo, opcoes, valor, onChange }) => {
 
 	const [opcaoFocada, setOpcaoFocada] = useState(null)
 
-	const manipularTeclaDoTeclado = evento => {
+	const manipularEvtTeclado = evento => {
 		alternarVisibilidade(true)
 		switch (evento.key) {
 			case 'ArrowDown':
@@ -95,7 +95,7 @@ export const ListaSupensa = ({ titulo, opcoes, valor, onChange }) => {
 			<BotaoEstilizado
 				estaAberta={estaAberta}
 				onClick={() => alternarVisibilidade(!estaAberta)}
-				onKeyDown={manipularTeclaDoTeclado}
+				onKeyDown={manipularEvtTeclado}
 				type='button'
 			>
 				<div>{valor ? valor.text : 'Selecione'}</div>
